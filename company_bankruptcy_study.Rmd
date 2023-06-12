@@ -1,0 +1,318 @@
+---
+title: "Corporate default study"
+author: "Vicente"
+date: "2023-06-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE, message = FALSE)
+```
+
+## Corporate default study
+
+This project is centered around analyzing a dataset related to the financial health of companies. The dataset consists of various financial and operational variables, providing valuable insights into factors that may contribute to bankruptcy. By examining these variables and their relationships, I aim to uncover patterns and indicators that can assist in predicting the likelihood of a company facing financial distress.
+
+The dataset used in this analysis was collected from reliable proprietary sources, ensuring data integrity and accuracy. It encompasses a wide range of features, including liquidity ratios, profitability measures, debt levels, and other financial metrics. These variables offer a comprehensive view of a company's financial position and performance.
+
+Throughout the analysis, I will address several key questions. What are the significant predictors of bankruptcy? How do different financial ratios and indicators impact the likelihood of default? Can we build a predictive model to forecast bankruptcy risk accurately? By exploring these questions, I aim to provide valuable insights and actionable recommendations to stakeholders, such as investors, financial institutions, and business analysts.
+
+To analyze the dataset, I employ various statistical and machine learning techniques. This includes exploratory data analysis, feature selection, logistic regression, decision tree models, and ensemble methods. Additionally, I utilize data visualization tools to present findings in a clear and intuitive manner, facilitating better understanding and decision-making.
+
+Some of key accomplishments and capabilities:
+
+Data Cleaning and Manipulation: Using powerful R packages such as tidyverse, dplyr, and purrr, I proficiently cleaned a complex dataset, effectively handling missing and infinite values, and identifying and removing duplicate entries. These steps ensured a clean and accurate dataset, which is the foundation of any data analysis project.
+
+Data Visualization: I have a knack for turning raw data into insightful visualizations. Utilizing the ggplot2 and gridExtra libraries, I created various plots including histograms, bar plots, and box plots to understand the distribution of different variables. Furthermore, I generated a correlation plot, which helped to visualize the relationships between different variables.
+
+Statistical Analysis: I computed descriptive statistics and identified correlations among variables, skillfully dealing with highly correlated variables to avoid multicollinearity in my predictive models.
+
+Predictive Modeling: I showcased my expertise in model building by using logistic regression and machine learning techniques with glm, randomForest, and xgboost libraries. I also implemented cross-validation for model evaluation and performed a systematic variable selection process to optimize model performance.
+
+Model Evaluation: I believe in the importance of robust model evaluation. I calculated the ROC curve and the AUC statistic, widely recognized metrics for binary classification problems, to evaluate the performance of my predictive models. This allowed me to ensure that the models I built were not just statistically significant but also practically useful.
+
+Domain Knowledge: My deep understanding of financial data was crucial in this project. I worked with financial data and developed insightful visualizations and models based on variables such as debt to EBITDA ratio, net worth/assets, and default status.
+
+Here are descriptions for each variable:
+
+cash_assets: This variable represents the ratio of a company's cash to its total assets. It gives an indication of the company's liquidity and its ability to cover its short-term liabilities.
+
+debt_ebitda: This variable is the ratio of a company's debt to its earnings before interest, taxes, depreciation, and amortization (EBITDA). It is used to measure a company's ability to pay off its incurred debt.
+
+debt_assets: This variable is the ratio of a company's total debt to its total assets. It provides a measure of the company's financial leverage and risk.
+
+roe: This stands for Return on Equity. It measures the financial performance of a company by dividing net income by shareholder's equity. It indicates how well a company is using its equity to generate profits.
+
+roa: This stands for Return on Assets. It measures how efficiently a company is using its assets to generate earnings. It's calculated by dividing net income by total assets.
+
+intger_debt: Internal cash generation / debt, a measure of a firm's ability to service its debt.
+
+size: This variable represents the size of the company in terms of its total assets.
+
+cap_debt: This variable represents the capital structure of the firm, specifically the proportion of debt in the company's capital structure.
+
+nw_assets: This variable represents the ratio of net worth to total assets. It's a measure of a company's financial stability and efficiency.
+
+liab_assets: This variable represents the ratio of total liabilities to total assets. It provides an indication of the financial risk of the company.
+
+intger_netdebt: Internal cash generation / debt, but with net debt (total debt - cash and cash equivalents) instead of total debt.
+
+int_cov: This variable likely stands for Interest Coverage, which is the ratio of a company's EBITDA to its interest expenses. It indicates how easily a company can pay interest on its outstanding debt.
+
+prftmrgn: This stands for Profit Margin. It measures how much out of every dollar of sales a company keeps in earnings. It is a measure of the profitability of the company.
+
+liquidity_ratio: This variable is a measure of a firm's ability to pay off its current liabilities with its current assets. It's a key indicator of a firm's financial health.
+
+netdebt_intger: Ratio of net debt to the company's EBITDA, another measure of a company's ability to pay its debts.
+
+intger_debt2: Another measure of a company's ability to pay its interest expenses.
+
+cash_currntliab: This variable represents the ratio of a company's cash to its current liabilities. It's a measure of a company's short-term liquidity.
+
+default: This binary variable indicates whether the company has defaulted on its debt or not. A value of 1 would represent a default, and 0 would represent no default.
+
+## Load packages and data
+```{r load}
+# Load packages
+
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(car)
+library(boot)
+library(rms)
+library(mFilter)
+library(gam)
+library(caret)
+library(pROC)
+library(DMwR)
+library(fmsb)
+library(gridExtra)
+library(purrr)
+library(bestglm)
+library(ggcorrplot)
+library(randomForest)
+library(kernlab)
+
+setwd("C:\\Users\\vicente\\Desktop\\Data Portfolio\\sme")
+df <- read_csv("company_bankruptcy_study.csv")
+```
+
+## Cleaning Data and removing highly correlated variables
+```{r clean}
+
+# Cleaning Data
+# Drop rows with NA's
+df <- df %>%
+  drop_na()
+
+# Remove infinite values
+df <- df %>%
+  mutate(across(everything(), ~replace(., is.infinite(.), NA)))
+
+# Drop rows with NA's again (this will remove the rows with infinities)
+df <- df %>%
+  drop_na()
+
+# Duplicated Data
+duplicate_rows <- duplicated(df)
+print(paste("Number of duplicated records:", sum(duplicate_rows)))
+
+# Now let's get summary statistics
+summary <- df %>%
+  summary()
+
+print(summary)
+
+# Find highly correlated variables
+correlation_matrix <- cor(df)
+highly_correlated <- findCorrelation(correlation_matrix, cutoff = 0.75)
+
+# Get the names of the highly correlated variables
+highly_correlated_names <- colnames(df)[highly_correlated]
+
+# Print out the names
+print(highly_correlated_names)
+
+# Remove highly correlated columns
+df <- df[c(-10,-11,-15,-17,-18)]
+
+```
+## Check for outliers
+```{r outliers}
+# The identification of outliers can be done in several ways, but a common method is to identify values that are too far from the mean or median of the distribution. One common rule is to consider as outliers any value that is further than 1.5 times the interquartile range (IQR) from the quartiles.
+
+# Function to identify outliers for numeric columns
+identify_outliers <- function(x) {
+  if(is.numeric(x)) {
+    qnt <- quantile(x, probs=c(.25, .75), na.rm = T)
+    H <- 1.5 * IQR(x, na.rm = T)
+    return(sum(x < qnt[1] - H | x > qnt[2] + H, na.rm = TRUE))
+  } else {
+    return(NA)
+  }
+}
+
+# Apply function to all columns of df and print the result
+sapply(df, identify_outliers)
+```
+
+## Create a correlation plot
+```{r corr plot}
+# Create a correlation plot
+df %>%
+  cor(use = "all.obs") %>%
+  ggcorrplot(show.diag = F, type = "lower", lab = TRUE, lab_size=2)
+```
+
+## Generate histograms for each variable
+```{r hist}
+# List of histograms for each column
+hist_list <- map(names(df), function(col) {
+  ggplot(df, aes_string(col)) +
+    geom_histogram(bins = 50) +
+    theme_minimal() +
+    ggtitle(col)
+})
+
+# Arrange plots in a grid
+do.call("grid.arrange", c(hist_list, ncol = 4))
+```
+
+## Plotting distributions of numeric variables
+```{r dist}
+# Plotting distributions of numeric variables
+ggplot(df, aes(x = nw_assets)) + geom_histogram(binwidth = 0.1, fill = "blue", color = "black")
+ggplot(df, aes(x = debt_assets)) + geom_histogram(binwidth = 0.1, fill = "blue", color = "black")
+ggplot(df, aes(x = prftmrgn)) + geom_histogram(binwidth = 0.01, fill = "blue", color = "black")
+
+# Barplots for categorical variables
+ggplot(df, aes(x = default)) + geom_bar(fill = "blue", color = "black")
+
+# Boxplots for numeric variables by default
+ggplot(df, aes(group = default, y = debt_ebitda)) + geom_boxplot()
+```
+
+## Plotting interesting features
+```{r feat}
+p1 <- ggplot(df, aes(x = factor(default), y = debt_ebitda)) +
+  geom_boxplot() +
+  labs(title = "Default vs Debt / EBITDA Correlation")
+
+p2 <- ggplot(df, aes(x = factor(default), y = nw_assets)) +
+  geom_boxplot() +
+  labs(title = "Default vs Net worth/Assets Correlation")
+
+p3 <- ggplot(df, aes(x = factor(default), y = size)) +
+  geom_boxplot() +
+  labs(title = "Default vs Size Correlation")
+
+p4 <- ggplot(df, aes(x = factor(default), y = roa)) +
+  geom_boxplot() +
+  labs(title = "Default vs RoA Correlation")
+
+# Arrange plots in a grid
+grid.arrange(p1, p2, p3, p4, ncol = 4)
+```
+
+## Fit the logistic regression model with all variables and check Variance Inflation Factors
+```{r log fit}
+# There is some multicollinearity because of cash_assets
+model_test <- glm(default ~ ., data = df)
+summary(model_test)
+data.frame(vif(model_test))
+```
+
+## Run various logistic models using 5-fold CV and selecting the best model
+```{r best logit, warning=FALSE, message=FALSE}
+# Define the outcome variable
+outcome <- "default"
+
+# Convert the outcome variable to a factor
+df[[outcome]] <- as.factor(df[[outcome]])
+
+# Generate valid variable names for factor levels
+levels(df[[outcome]]) <- make.names(levels(df[[outcome]]))
+
+# Define the predictor variables and the outcome
+variables <- colnames(df[1:16])
+
+data_subset <- df[, c(variables, outcome)]
+
+# Define the control for the train function
+ctrl <- trainControl(method = "cv", number = 5, classProbs = TRUE, summaryFunction = twoClassSummary,verboseIter = FALSE)
+
+# Initialize variables to store the best model and the best AUC
+best_model <- NULL
+best_auc <- 0
+
+# Fit a logistic regression model using stepwise variable selection
+model_formula <- as.formula(paste(outcome, "~ ."))
+
+# Fit a logistic regression model using 5-fold CV and compute the AUC
+set.seed(123) # for reproducibility
+best_logit <- train(model_formula, data = data_subset, method = "glmStepAIC", trControl = ctrl, metric = "ROC", na.action = na.omit)
+
+# Print the model
+print(best_logit)
+summary(best_logit)
+```
+
+## ROC analysis and AUROC of Logit model
+```{r roc}
+
+#The Area Under the Receiver Operating Characteristic curve (AUROC) is a performance metric for binary classification problems. It measures the trade-off between sensitivity (true positive rate) and specificity (false positive rate) for every possible cutoff. An AUROC of 0.5 is no better than random guessing, while an AUROC of 1.0 signifies a perfect classifier. In general, an AUROC above 0.7 is considered acceptable, while an AUROC above 0.8 is considered good, and an AUROC above 0.9 is considered excellent. However, the acceptability of an AUROC value can depend on the specific application and the cost trade-off between false positives and false negatives. It's important to note that a high AUROC doesn't necessarily imply a useful model, especially if the positive class is very rare, or if the cost of a false positive is high.
+
+
+# Make predictions on the validation set
+pred <- predict(best_logit, newdata = data_subset, type = "prob")
+
+# Compute the ROC curve
+roc_obj <- pROC::roc(response = as.numeric(data_subset[[outcome]] == "X1"), predictor = pred[, "X1"])
+# Compute the ROC curve
+roc_obj <- pROC::roc(response = as.numeric(data_subset[[outcome]] == "X1"), predictor = pred[, "X1"])
+
+# Convert the roc object to a data frame
+roc_df <- data.frame(FPR = 1 - roc_obj$specificities, TPR = roc_obj$sensitivities)
+
+# Create the ROC plot
+ggplot(data = roc_df, aes(x = FPR, y = TPR)) +
+  geom_line(color = "blue") +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray") +
+  ggtitle("ROC curve") +
+  labs(x = "False Positive Rate", y = "True Positive Rate") +
+  theme_minimal() +
+  annotate("text", x = 0.6, y = 0.4, label = paste("AUC =", round(auc(roc_obj), 2)))
+```
+
+## Now let's run some ML models to see if they can improve performance (Random Forest, Neural Net, SVM)
+```{r ml models, warning=FALSE, message=FALSE}
+# Define the control for the train function
+ctrl <- trainControl(method = "cv", number = 5, classProbs = TRUE, summaryFunction = twoClassSummary)
+
+# Define the model formula
+model_formula <- as.formula(paste(outcome, "~ ."))
+
+# Define a list of models to fit
+models <- c("rf", "nnet", "svmLinear")
+
+# Initialize a list to store the models
+model_list <- list()
+
+# Fit all models using 5-fold CV
+for (model in models) {
+  set.seed(123) # for reproducibility
+  suppressWarnings({model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, metric = "ROC", na.action = na.omit)})
+}
+
+# Print the models
+lapply(model_list, print)
+
+# Compare the performance of the models
+results <- resamples(model_list)
+
+# Print the summary of the results
+summary(results)
+
+# nnet and RF models improve AUROC, but they are more complex models.
+```
