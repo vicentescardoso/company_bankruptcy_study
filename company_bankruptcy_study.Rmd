@@ -2,7 +2,7 @@
 title: "Corporate default study"
 author: "Vicente"
 date: "2023-06-10"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
