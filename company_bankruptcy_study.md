@@ -13,7 +13,8 @@ relationships, I aim to uncover patterns and indicators that can assist
 in predicting the likelihood of a company facing financial distress.
 
 The dataset used in this analysis was collected from reliable
-proprietary sources, ensuring data integrity and accuracy. It
+proprietary sources, ensuring data integrity and accuracy. It has data
+from a set of companies in 2008 and all data refer to this period. It
 encompasses a wide range of features, including liquidity ratios,
 profitability measures, debt levels, and other financial metrics. These
 variables offer a comprehensive view of a company’s financial position
@@ -34,111 +35,113 @@ methods. Additionally, I utilize data visualization tools to present
 findings in a clear and intuitive manner, facilitating better
 understanding and decision-making.
 
-Some of key accomplishments and capabilities:
+*Some of key accomplishments and capabilities:*
 
-Data Cleaning and Manipulation: Using powerful R packages such as
+*Data Cleaning and Manipulation*: Using powerful R packages such as
 tidyverse, dplyr, and purrr, I proficiently cleaned a complex dataset,
 effectively handling missing and infinite values, and identifying and
 removing duplicate entries. These steps ensured a clean and accurate
 dataset, which is the foundation of any data analysis project.
 
-Data Visualization: I have a knack for turning raw data into insightful
-visualizations. Utilizing the ggplot2 and gridExtra libraries, I created
-various plots including histograms, bar plots, and box plots to
-understand the distribution of different variables. Furthermore, I
-generated a correlation plot, which helped to visualize the
-relationships between different variables.
+*Data Visualization*: I have a knack for turning raw data into
+insightful visualizations. Utilizing the ggplot2 and gridExtra
+libraries, I created various plots including histograms, bar plots, and
+box plots to understand the distribution of different variables.
+Furthermore, I generated a correlation plot, which helped to visualize
+the relationships between different variables.
 
-Statistical Analysis: I computed descriptive statistics and identified
+*Statistical Analysis*: I computed descriptive statistics and identified
 correlations among variables, skillfully dealing with highly correlated
 variables to avoid multicollinearity in my predictive models.
 
-Predictive Modeling: I showcased my expertise in model building by using
-logistic regression and machine learning techniques with glm,
+*Predictive Modeling*: I showcased my expertise in model building by
+using logistic regression and machine learning techniques with glm,
 randomForest, and xgboost libraries. I also implemented cross-validation
 for model evaluation and performed a systematic variable selection
 process to optimize model performance.
 
-Model Evaluation: I believe in the importance of robust model
+*Model Evaluation*: I believe in the importance of robust model
 evaluation. I calculated the ROC curve and the AUC statistic, widely
 recognized metrics for binary classification problems, to evaluate the
 performance of my predictive models. This allowed me to ensure that the
 models I built were not just statistically significant but also
 practically useful.
 
-Domain Knowledge: My deep understanding of financial data was crucial in
-this project. I worked with financial data and developed insightful
+*Domain Knowledge*: My deep understanding of financial data was crucial
+in this project. I worked with financial data and developed insightful
 visualizations and models based on variables such as debt to EBITDA
 ratio, net worth/assets, and default status.
 
-Here are descriptions for each variable:
+*Here are descriptions for each variable:*
 
-cash_assets: This variable represents the ratio of a company’s cash to
-its total assets. It gives an indication of the company’s liquidity and
-its ability to cover its short-term liabilities.
+- cash_assets: This variable represents the ratio of a company’s cash to
+  its total assets. It gives an indication of the company’s liquidity
+  and its ability to cover its short-term liabilities.
 
-debt_ebitda: This variable is the ratio of a company’s debt to its
-earnings before interest, taxes, depreciation, and amortization
-(EBITDA). It is used to measure a company’s ability to pay off its
-incurred debt.
+- debt_ebitda: This variable is the ratio of a company’s debt to its
+  earnings before interest, taxes, depreciation, and amortization
+  (EBITDA). It is used to measure a company’s ability to pay off its
+  incurred debt.
 
-debt_assets: This variable is the ratio of a company’s total debt to its
-total assets. It provides a measure of the company’s financial leverage
-and risk.
+- debt_assets: This variable is the ratio of a company’s total debt to
+  its total assets. It provides a measure of the company’s financial
+  leverage and risk.
 
-roe: This stands for Return on Equity. It measures the financial
-performance of a company by dividing net income by shareholder’s equity.
-It indicates how well a company is using its equity to generate profits.
+- roe: This stands for Return on Equity. It measures the financial
+  performance of a company by dividing net income by shareholder’s
+  equity. It indicates how well a company is using its equity to
+  generate profits.
 
-roa: This stands for Return on Assets. It measures how efficiently a
-company is using its assets to generate earnings. It’s calculated by
-dividing net income by total assets.
+- roa: This stands for Return on Assets. It measures how efficiently a
+  company is using its assets to generate earnings. It’s calculated by
+  dividing net income by total assets.
 
-intger_debt: Internal cash generation / debt, a measure of a firm’s
-ability to service its debt.
+- intger_debt: Internal cash generation / debt, a measure of a firm’s
+  ability to service its debt.
 
-size: This variable represents the size of the company in terms of its
-total assets.
+- size: This variable represents the size of the company in terms of its
+  total assets.
 
-cap_debt: This variable represents the capital structure of the firm,
-specifically the proportion of debt in the company’s capital structure.
+- cap_debt: This variable represents the capital structure of the firm,
+  specifically the proportion of debt in the company’s capital
+  structure.
 
-nw_assets: This variable represents the ratio of net worth to total
-assets. It’s a measure of a company’s financial stability and
-efficiency.
+- nw_assets: This variable represents the ratio of net worth to total
+  assets. It’s a measure of a company’s financial stability and
+  efficiency.
 
-liab_assets: This variable represents the ratio of total liabilities to
-total assets. It provides an indication of the financial risk of the
-company.
+- liab_assets: This variable represents the ratio of total liabilities
+  to total assets. It provides an indication of the financial risk of
+  the company.
 
-intger_netdebt: Internal cash generation / debt, but with net debt
-(total debt - cash and cash equivalents) instead of total debt.
+- intger_netdebt: Internal cash generation / debt, but with net debt
+  (total debt - cash and cash equivalents) instead of total debt.
 
-int_cov: This variable likely stands for Interest Coverage, which is the
-ratio of a company’s EBITDA to its interest expenses. It indicates how
-easily a company can pay interest on its outstanding debt.
+- int_cov: This variable likely stands for Interest Coverage, which is
+  the ratio of a company’s EBITDA to its interest expenses. It indicates
+  how easily a company can pay interest on its outstanding debt.
 
-prftmrgn: This stands for Profit Margin. It measures how much out of
-every dollar of sales a company keeps in earnings. It is a measure of
-the profitability of the company.
+- prftmrgn: This stands for Profit Margin. It measures how much out of
+  every dollar of sales a company keeps in earnings. It is a measure of
+  the profitability of the company.
 
-liquidity_ratio: This variable is a measure of a firm’s ability to pay
-off its current liabilities with its current assets. It’s a key
-indicator of a firm’s financial health.
+- liquidity_ratio: This variable is a measure of a firm’s ability to pay
+  off its current liabilities with its current assets. It’s a key
+  indicator of a firm’s financial health.
 
-netdebt_intger: Ratio of net debt to the company’s EBITDA, another
-measure of a company’s ability to pay its debts.
+- netdebt_intger: Ratio of net debt to the company’s EBITDA, another
+  measure of a company’s ability to pay its debts.
 
-intger_debt2: Another measure of a company’s ability to pay its interest
-expenses.
+- intger_debt2: Another measure of a company’s ability to pay its
+  interest expenses.
 
-cash_currntliab: This variable represents the ratio of a company’s cash
-to its current liabilities. It’s a measure of a company’s short-term
-liquidity.
+- cash_currntliab: This variable represents the ratio of a company’s
+  cash to its current liabilities. It’s a measure of a company’s
+  short-term liquidity.
 
-default: This binary variable indicates whether the company has
-defaulted on its debt or not. A value of 1 would represent a default,
-and 0 would represent no default.
+- default: This binary variable indicates whether the company has
+  defaulted on its debt or not. A value of 1 would represent a default,
+  and 0 would represent no default.
 
 ## Load packages and data
 
@@ -163,6 +166,8 @@ library(bestglm)
 library(ggcorrplot)
 library(randomForest)
 library(kernlab)
+library(gbm)
+library(glmnet)
 
 setwd("C:\\Users\\vicente\\Desktop\\Data Portfolio\\sme")
 df <- read_csv("company_bankruptcy_study.csv")
@@ -295,6 +300,8 @@ sapply(df, identify_outliers)
 
 ``` r
 # Create a correlation plot
+# We can see that profit variables and liquidity variables are highly correlated. 
+# So we can use that information for feature selection. 
 df %>%
   cor(use = "all.obs") %>%
   ggcorrplot(show.diag = F, type = "lower", lab = TRUE, lab_size=2)
@@ -305,7 +312,10 @@ df %>%
 ## Generate histograms for each variable
 
 ``` r
+# Some of the variables are centered around zero, mainly because they are ratios.
+# We will investigate some of these variables later.
 # List of histograms for each column
+
 hist_list <- map(names(df), function(col) {
   ggplot(df, aes_string(col)) +
     geom_histogram(bins = 50) +
@@ -342,6 +352,7 @@ ggplot(df, aes(x = prftmrgn)) + geom_histogram(binwidth = 0.01, fill = "blue", c
 
 ``` r
 # Barplots for categorical variables
+# Default is our outcome, we should check its relative frequency
 ggplot(df, aes(x = default)) + geom_bar(fill = "blue", color = "black")
 ```
 
@@ -1645,10 +1656,28 @@ summary(best_logit)
     ## 
     ## Number of Fisher Scoring iterations: 8
 
+``` r
+# The logistic regression model was used to predict the default status of companies based on a set of financial variables. The model summary indicates that several financial variables are statistically significant in predicting default status. Notably, variables such as "debt_assets," "roa," "size," "nw_assets," "liquidity_ratio," and "cash_currntliab" have significant coefficients, as indicated by stars in the "Pr(>|z|)" column.
+
+# The interpretation of the coefficients shows that a positive coefficient suggests an increase in the corresponding predictor variable is associated with a higher likelihood of default, while a negative coefficient implies a lower likelihood of default. For instance, "roa" has a negative coefficient of -2.230, indicating that a higher return on assets is associated with a lower probability of default. Conversely, "debt_assets" has a positive coefficient of 0.485, suggesting that a higher debt to assets ratio is associated with a higher probability of default.
+
+#To further assess the model's performance, we can examine its ROC curve and calibration. This will help us understand how well the model distinguishes between default and non-default cases and whether the predicted probabilities align with observed proportions.
+```
+
 ## ROC analysis and AUROC of Logit model
 
 ``` r
-#The Area Under the Receiver Operating Characteristic curve (AUROC) is a performance metric for binary classification problems. It measures the trade-off between sensitivity (true positive rate) and specificity (false positive rate) for every possible cutoff. An AUROC of 0.5 is no better than random guessing, while an AUROC of 1.0 signifies a perfect classifier. In general, an AUROC above 0.7 is considered acceptable, while an AUROC above 0.8 is considered good, and an AUROC above 0.9 is considered excellent. However, the acceptability of an AUROC value can depend on the specific application and the cost trade-off between false positives and false negatives. It's important to note that a high AUROC doesn't necessarily imply a useful model, especially if the positive class is very rare, or if the cost of a false positive is high.
+# The Area Under the Receiver Operating Characteristic curve (AUROC) is a performance metric for
+# binary classification problems. It measures the trade-off between sensitivity (true positive
+# rate) and specificity (false positive rate) for every possible cutoff. An AUROC of 0.5 is no
+# better than random guessing, while an AUROC of 1.0 signifies a perfect classifier. In general,
+# an AUROC above 0.7 is considered acceptable, while an AUROC above 0.8 is considered good, 
+# and an AUROC above 0.9 is considered excellent. However, the acceptability of an AUROC value
+# can depend on the specific application and the cost trade-off between false positives and
+# false negatives. It's important to note that a high AUROC doesn't necessarily imply a useful 
+# model, especially if the positive class is very rare, or if the cost of a false positive is 
+# high.
+
 
 
 # Make predictions on the validation set
@@ -1677,6 +1706,8 @@ ggplot(data = roc_df, aes(x = FPR, y = TPR)) +
 ## Now let’s run some ML models to see if they can improve performance (Random Forest, Neural Net, SVM)
 
 ``` r
+# I added hyperparameter tuning for the rf and nnet models, which helps to find the optimal values of hyperparameters and can prevent overfitting. For the rf model, we specified tuneLength = 5 to search for the best number of features to consider at each split. For the nnet model, we provided a grid of different size and decay values to find the best architecture.
+
 # Define the control for the train function
 ctrl <- trainControl(method = "cv", number = 5, classProbs = TRUE, summaryFunction = twoClassSummary)
 
@@ -1689,655 +1720,665 @@ models <- c("rf", "nnet", "svmLinear")
 # Initialize a list to store the models
 model_list <- list()
 
-# Fit all models using 5-fold CV
+# Fit all models using 5-fold CV and hyperparameter tuning
 for (model in models) {
   set.seed(123) # for reproducibility
-  suppressWarnings({model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, metric = "ROC", na.action = na.omit)})
+  
+  # Apply regularization to the models
+  if (model == "rf") {
+    model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, tuneLength = 5, metric = "ROC", na.action = na.omit)
+  } else if (model == "nnet") {
+    model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, tuneGrid = expand.grid(.size = c(3, 5, 7), .decay = c(0, 0.01, 0.1)), metric = "ROC", na.action = na.omit)
+  } else {
+    model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, metric = "ROC", na.action = na.omit)
+  }
 }
 ```
 
-    ## # weights:  19
-    ## initial  value 7269.765453 
-    ## iter  10 value 1549.640744
-    ## iter  20 value 1263.526103
-    ## iter  30 value 1234.024552
-    ## iter  40 value 1219.333463
-    ## iter  50 value 1207.300604
-    ## iter  60 value 1191.563417
-    ## iter  70 value 1188.549469
-    ## iter  80 value 1171.702900
-    ## iter  90 value 1166.699335
-    ## iter 100 value 1152.112819
-    ## final  value 1152.112819 
-    ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 6181.370647 
-    ## iter  10 value 1355.862055
-    ## iter  20 value 1243.866735
-    ## iter  30 value 1208.034303
-    ## iter  40 value 1193.715581
-    ## iter  50 value 1190.758110
-    ## iter  60 value 1188.199030
-    ## iter  70 value 1181.053553
-    ## iter  80 value 1179.318192
-    ## iter  90 value 1178.807088
-    ## iter 100 value 1177.163186
-    ## final  value 1177.163186 
+    ## initial  value 6031.528892 
+    ## iter  10 value 1831.729468
+    ## iter  20 value 1338.712042
+    ## iter  30 value 1263.454612
+    ## iter  40 value 1234.098472
+    ## iter  50 value 1229.276764
+    ## iter  60 value 1204.808738
+    ## iter  70 value 1191.570038
+    ## iter  80 value 1156.934686
+    ## iter  90 value 1148.840780
+    ## iter 100 value 1145.424235
+    ## final  value 1145.424235 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 4131.625814 
-    ## iter  10 value 1237.962679
-    ## iter  20 value 1201.033644
-    ## iter  30 value 1169.727487
-    ## iter  40 value 1152.561342
-    ## iter  50 value 1143.064762
-    ## iter  60 value 1131.761210
-    ## iter  70 value 1116.110031
-    ## iter  80 value 1106.863245
-    ## iter  90 value 1092.809360
-    ## iter 100 value 1078.760490
-    ## final  value 1078.760490 
+    ## initial  value 7520.644461 
+    ## iter  10 value 1208.792938
+    ## iter  20 value 1171.765427
+    ## iter  30 value 1157.107786
+    ## iter  40 value 1149.117211
+    ## iter  50 value 1141.176589
+    ## iter  60 value 1134.884351
+    ## iter  70 value 1125.935535
+    ## iter  80 value 1114.778448
+    ## iter  90 value 1105.300529
+    ## iter 100 value 1098.927501
+    ## final  value 1098.927501 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 7212.727186 
-    ## iter  10 value 1873.170625
-    ## iter  20 value 1283.140101
-    ## iter  30 value 1244.000365
-    ## iter  40 value 1213.978113
-    ## iter  50 value 1196.521768
-    ## iter  60 value 1182.870745
-    ## iter  70 value 1157.149521
-    ## iter  80 value 1152.753842
-    ## iter  90 value 1150.683891
-    ## iter 100 value 1150.115228
-    ## final  value 1150.115228 
-    ## stopped after 100 iterations
-    ## # weights:  55
-    ## initial  value 5008.070805 
-    ## iter  10 value 1364.541684
-    ## iter  20 value 1255.751155
-    ## iter  30 value 1216.299971
-    ## iter  40 value 1198.696978
-    ## iter  50 value 1167.412005
-    ## iter  60 value 1143.055707
-    ## iter  70 value 1131.564879
-    ## iter  80 value 1126.519294
-    ## iter  90 value 1122.829638
-    ## iter 100 value 1121.842897
-    ## final  value 1121.842897 
-    ## stopped after 100 iterations
-    ## # weights:  91
-    ## initial  value 4371.159533 
-    ## iter  10 value 1330.213387
-    ## iter  20 value 1309.680386
-    ## iter  30 value 1254.854352
-    ## iter  40 value 1245.845347
-    ## iter  50 value 1228.756925
-    ## iter  60 value 1200.971655
-    ## iter  70 value 1173.827209
-    ## iter  80 value 1161.906658
-    ## iter  90 value 1152.668692
-    ## iter 100 value 1144.679285
-    ## final  value 1144.679285 
-    ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 5973.210800 
-    ## iter  10 value 1356.641228
-    ## iter  20 value 1346.858483
-    ## iter  30 value 1346.850131
-    ## iter  40 value 1340.034536
-    ## iter  50 value 1337.052085
-    ## iter  60 value 1336.890807
-    ## iter  70 value 1336.386800
-    ## iter  80 value 1335.823100
-    ## iter  90 value 1334.347535
-    ## iter 100 value 1333.846318
-    ## final  value 1333.846318 
+    ## # weights:  127
+    ## initial  value 6604.334126 
+    ## iter  10 value 1203.094176
+    ## iter  20 value 1169.011604
+    ## iter  30 value 1146.043343
+    ## iter  40 value 1134.346537
+    ## iter  50 value 1125.138446
+    ## iter  60 value 1113.747455
+    ## iter  70 value 1103.413137
+    ## iter  80 value 1093.851748
+    ## iter  90 value 1085.024404
+    ## iter 100 value 1078.481999
+    ## final  value 1078.481999 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 7156.468448 
-    ## iter  10 value 1355.969786
-    ## iter  20 value 1335.336200
-    ## iter  30 value 1333.900347
-    ## iter  40 value 1332.254258
-    ## iter  50 value 1330.791890
-    ## iter  60 value 1329.520422
-    ## iter  70 value 1322.997791
-    ## iter  80 value 1309.436780
-    ## iter  90 value 1304.945588
-    ## iter 100 value 1301.201578
-    ## final  value 1301.201578 
+    ## initial  value 3738.525061 
+    ## iter  10 value 1315.493382
+    ## iter  20 value 1248.080016
+    ## iter  30 value 1231.468599
+    ## iter  40 value 1226.341471
+    ## iter  50 value 1222.007661
+    ## iter  60 value 1215.471037
+    ## iter  70 value 1205.035327
+    ## iter  80 value 1198.262621
+    ## iter  90 value 1177.101561
+    ## iter 100 value 1151.106064
+    ## final  value 1151.106064 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 5817.190817 
-    ## iter  10 value 1227.758580
-    ## iter  20 value 1198.096893
-    ## iter  30 value 1173.891851
-    ## iter  40 value 1154.010628
-    ## iter  50 value 1136.136209
-    ## iter  60 value 1119.596687
-    ## iter  70 value 1107.362295
-    ## iter  80 value 1102.430456
-    ## iter  90 value 1095.250828
-    ## iter 100 value 1090.667353
-    ## final  value 1090.667353 
+    ## initial  value 3040.778817 
+    ## iter  10 value 1199.672564
+    ## iter  20 value 1180.693168
+    ## iter  30 value 1161.776761
+    ## iter  40 value 1155.031965
+    ## iter  50 value 1141.812722
+    ## iter  60 value 1122.074583
+    ## iter  70 value 1113.597247
+    ## iter  80 value 1106.672161
+    ## iter  90 value 1103.116981
+    ## iter 100 value 1101.126925
+    ## final  value 1101.126925 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 3343.560212 
-    ## iter  10 value 1352.067717
-    ## iter  20 value 1291.494208
-    ## iter  30 value 1253.025343
-    ## iter  40 value 1242.915574
-    ## iter  50 value 1241.675208
-    ## iter  60 value 1238.258405
-    ## iter  70 value 1234.078659
-    ## iter  80 value 1213.835590
-    ## iter  90 value 1199.450238
-    ## iter 100 value 1188.854414
-    ## final  value 1188.854414 
+    ## # weights:  127
+    ## initial  value 8405.057578 
+    ## iter  10 value 1222.887869
+    ## iter  20 value 1200.076573
+    ## iter  30 value 1170.447869
+    ## iter  40 value 1157.136746
+    ## iter  50 value 1143.589126
+    ## iter  60 value 1133.784179
+    ## iter  70 value 1125.792275
+    ## iter  80 value 1120.799968
+    ## iter  90 value 1116.628059
+    ## iter 100 value 1115.019051
+    ## final  value 1115.019051 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 4627.584176 
-    ## iter  10 value 1497.799021
-    ## iter  20 value 1281.911775
-    ## iter  30 value 1236.041168
-    ## iter  40 value 1227.588722
-    ## iter  50 value 1222.211805
-    ## iter  60 value 1219.126268
-    ## iter  70 value 1217.086734
-    ## iter  80 value 1214.472715
-    ## iter  90 value 1210.888511
-    ## iter 100 value 1209.839327
-    ## final  value 1209.839327 
+    ## initial  value 7923.982819 
+    ## iter  10 value 1812.243315
+    ## iter  20 value 1367.368049
+    ## iter  30 value 1261.222169
+    ## iter  40 value 1208.115674
+    ## iter  50 value 1181.584215
+    ## iter  60 value 1157.383556
+    ## iter  70 value 1149.320199
+    ## iter  80 value 1138.067028
+    ## iter  90 value 1133.496352
+    ## iter 100 value 1128.923074
+    ## final  value 1128.923074 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 5514.758573 
-    ## iter  10 value 1206.117249
-    ## iter  20 value 1170.739212
-    ## iter  30 value 1148.677522
-    ## iter  40 value 1140.891505
-    ## iter  50 value 1128.579294
-    ## iter  60 value 1111.240718
-    ## iter  70 value 1094.246628
-    ## iter  80 value 1086.093943
-    ## iter  90 value 1070.635892
-    ## iter 100 value 1058.175397
-    ## final  value 1058.175397 
+    ## initial  value 5719.743717 
+    ## iter  10 value 1211.459487
+    ## iter  20 value 1184.542537
+    ## iter  30 value 1169.529993
+    ## iter  40 value 1147.704157
+    ## iter  50 value 1140.644053
+    ## iter  60 value 1131.897503
+    ## iter  70 value 1120.568666
+    ## iter  80 value 1113.702223
+    ## iter  90 value 1110.613648
+    ## iter 100 value 1109.076976
+    ## final  value 1109.076976 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 4464.492993 
-    ## iter  10 value 1400.824520
-    ## iter  20 value 1362.099933
-    ## iter  30 value 1351.666172
-    ## iter  40 value 1344.084088
-    ## iter  50 value 1343.011861
-    ## iter  60 value 1319.887434
-    ## iter  70 value 1236.563525
-    ## iter  80 value 1203.864412
-    ## iter  90 value 1175.762176
-    ## iter 100 value 1152.438636
-    ## final  value 1152.438636 
+    ## # weights:  127
+    ## initial  value 5244.928095 
+    ## iter  10 value 1289.661595
+    ## iter  20 value 1238.180945
+    ## iter  30 value 1206.786288
+    ## iter  40 value 1190.724097
+    ## iter  50 value 1172.762855
+    ## iter  60 value 1154.336041
+    ## iter  70 value 1147.465691
+    ## iter  80 value 1141.742845
+    ## iter  90 value 1136.659796
+    ## iter 100 value 1128.562092
+    ## final  value 1128.562092 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 4389.684056 
-    ## iter  10 value 1411.370377
-    ## iter  20 value 1313.187603
-    ## iter  30 value 1273.018117
-    ## iter  40 value 1230.455817
-    ## iter  50 value 1201.387181
-    ## iter  60 value 1175.516697
-    ## iter  70 value 1156.360679
-    ## iter  80 value 1149.902813
-    ## iter  90 value 1144.917443
-    ## iter 100 value 1143.143908
-    ## final  value 1143.143908 
+    ## initial  value 7695.689649 
+    ## iter  10 value 1322.087784
+    ## iter  20 value 1250.290281
+    ## iter  30 value 1238.374445
+    ## iter  40 value 1236.765510
+    ## iter  50 value 1234.270631
+    ## iter  60 value 1228.047473
+    ## iter  70 value 1224.895237
+    ## iter  80 value 1222.712592
+    ## iter  90 value 1221.560895
+    ## iter 100 value 1218.685429
+    ## final  value 1218.685429 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 4503.411115 
-    ## iter  10 value 1393.378750
-    ## iter  20 value 1348.178115
-    ## iter  30 value 1288.371321
-    ## iter  40 value 1271.255266
-    ## iter  50 value 1191.790814
-    ## iter  60 value 1173.868210
-    ## iter  70 value 1151.573509
-    ## iter  80 value 1146.508272
-    ## iter  90 value 1135.829602
-    ## iter 100 value 1128.719265
-    ## final  value 1128.719265 
+    ## initial  value 4006.438777 
+    ## iter  10 value 1184.075907
+    ## iter  20 value 1160.955181
+    ## iter  30 value 1148.377640
+    ## iter  40 value 1128.639870
+    ## iter  50 value 1109.905630
+    ## iter  60 value 1105.299454
+    ## iter  70 value 1100.118001
+    ## iter  80 value 1090.112374
+    ## iter  90 value 1084.883482
+    ## iter 100 value 1072.912532
+    ## final  value 1072.912532 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 4202.087559 
-    ## iter  10 value 1312.741346
-    ## iter  20 value 1251.504156
-    ## iter  30 value 1229.201853
-    ## iter  40 value 1226.797828
-    ## iter  50 value 1223.930631
-    ## iter  60 value 1222.003316
-    ## iter  70 value 1219.528892
-    ## iter  80 value 1218.220679
-    ## iter  90 value 1210.449423
-    ## iter 100 value 1208.808600
-    ## final  value 1208.808600 
+    ## # weights:  127
+    ## initial  value 4666.529578 
+    ## iter  10 value 1205.524701
+    ## iter  20 value 1150.496771
+    ## iter  30 value 1129.156709
+    ## iter  40 value 1116.142575
+    ## iter  50 value 1110.796228
+    ## iter  60 value 1106.293700
+    ## iter  70 value 1102.088225
+    ## iter  80 value 1097.367672
+    ## iter  90 value 1089.041827
+    ## iter 100 value 1083.297372
+    ## final  value 1083.297372 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 7434.188009 
-    ## iter  10 value 1383.349745
-    ## iter  20 value 1344.245420
-    ## iter  30 value 1335.807025
-    ## iter  40 value 1327.900127
-    ## iter  50 value 1325.308797
-    ## iter  60 value 1322.310768
-    ## iter  70 value 1321.106082
-    ## iter  80 value 1320.690424
-    ## iter  90 value 1320.098684
-    ## iter 100 value 1319.420483
-    ## final  value 1319.420483 
+    ## initial  value 4123.014904 
+    ## iter  10 value 1424.739468
+    ## iter  20 value 1294.385624
+    ## iter  30 value 1282.493947
+    ## iter  40 value 1277.609145
+    ## iter  50 value 1237.137862
+    ## iter  60 value 1222.526201
+    ## iter  70 value 1208.426335
+    ## iter  80 value 1200.557245
+    ## iter  90 value 1198.980778
+    ## iter 100 value 1197.015950
+    ## final  value 1197.015950 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 4637.925043 
-    ## iter  10 value 1202.848351
-    ## iter  20 value 1169.836797
-    ## iter  30 value 1148.295648
-    ## iter  40 value 1116.659287
-    ## iter  50 value 1097.119157
-    ## iter  60 value 1086.001823
-    ## iter  70 value 1075.840882
-    ## iter  80 value 1069.693058
-    ## iter  90 value 1059.178637
-    ## iter 100 value 1052.666406
-    ## final  value 1052.666406 
+    ## initial  value 6039.419793 
+    ## iter  10 value 1227.089945
+    ## iter  20 value 1171.543033
+    ## iter  30 value 1156.618091
+    ## iter  40 value 1146.727750
+    ## iter  50 value 1126.558295
+    ## iter  60 value 1109.525893
+    ## iter  70 value 1096.935526
+    ## iter  80 value 1091.240321
+    ## iter  90 value 1088.790058
+    ## iter 100 value 1087.721397
+    ## final  value 1087.721397 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 4828.307046 
-    ## iter  10 value 1330.865813
-    ## iter  20 value 1269.592662
-    ## iter  30 value 1236.294363
-    ## iter  40 value 1210.388471
-    ## iter  50 value 1199.971384
-    ## iter  60 value 1181.256514
-    ## iter  70 value 1172.709062
-    ## iter  80 value 1156.527047
-    ## iter  90 value 1150.902048
-    ## iter 100 value 1147.885108
-    ## final  value 1147.885108 
+    ## # weights:  127
+    ## initial  value 3394.315992 
+    ## iter  10 value 1197.154501
+    ## iter  20 value 1161.504180
+    ## iter  30 value 1143.755749
+    ## iter  40 value 1130.226814
+    ## iter  50 value 1115.098576
+    ## iter  60 value 1099.572453
+    ## iter  70 value 1091.468618
+    ## iter  80 value 1084.566067
+    ## iter  90 value 1077.495792
+    ## iter 100 value 1073.043235
+    ## final  value 1073.043235 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 2175.117383 
-    ## iter  10 value 1272.679304
-    ## iter  20 value 1225.651652
-    ## iter  30 value 1202.205045
-    ## iter  40 value 1190.292559
-    ## iter  50 value 1185.692607
-    ## iter  60 value 1176.120963
-    ## iter  70 value 1161.483077
-    ## iter  80 value 1157.099677
-    ## iter  90 value 1153.285503
-    ## iter 100 value 1144.956709
-    ## final  value 1144.956709 
+    ## initial  value 5905.285034 
+    ## iter  10 value 1487.829970
+    ## iter  20 value 1278.079771
+    ## iter  30 value 1206.437338
+    ## iter  40 value 1189.996284
+    ## iter  50 value 1158.869381
+    ## iter  60 value 1148.634023
+    ## iter  70 value 1127.958768
+    ## iter  80 value 1123.770131
+    ## iter  90 value 1122.683549
+    ## iter 100 value 1120.197203
+    ## final  value 1120.197203 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 6378.866184 
-    ## iter  10 value 1560.304213
-    ## iter  20 value 1378.260934
-    ## iter  30 value 1238.842926
-    ## iter  40 value 1223.740024
-    ## iter  50 value 1203.705369
-    ## iter  60 value 1190.857278
-    ## iter  70 value 1162.360744
-    ## iter  80 value 1155.794250
-    ## iter  90 value 1149.761843
-    ## iter 100 value 1146.613884
-    ## final  value 1146.613884 
+    ## initial  value 5422.349143 
+    ## iter  10 value 1708.922457
+    ## iter  20 value 1647.103442
+    ## iter  30 value 1601.246755
+    ## iter  40 value 1518.483288
+    ## iter  50 value 1376.880763
+    ## iter  60 value 1272.288440
+    ## iter  70 value 1233.928345
+    ## iter  80 value 1195.714325
+    ## iter  90 value 1168.451113
+    ## iter 100 value 1158.346114
+    ## final  value 1158.346114 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 4020.385678 
-    ## iter  10 value 1345.060503
-    ## iter  20 value 1341.737368
-    ## iter  30 value 1287.236403
-    ## iter  40 value 1232.644863
-    ## iter  50 value 1208.602559
-    ## iter  60 value 1194.190099
-    ## iter  70 value 1184.433002
-    ## iter  80 value 1159.387001
-    ## iter  90 value 1156.052801
-    ## iter 100 value 1152.929356
-    ## final  value 1152.929356 
+    ## # weights:  127
+    ## initial  value 2149.279422 
+    ## iter  10 value 1213.983955
+    ## iter  20 value 1170.899351
+    ## iter  30 value 1150.922495
+    ## iter  40 value 1139.300609
+    ## iter  50 value 1127.046084
+    ## iter  60 value 1114.839249
+    ## iter  70 value 1107.331046
+    ## iter  80 value 1095.666519
+    ## iter  90 value 1088.750059
+    ## iter 100 value 1081.380949
+    ## final  value 1081.380949 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 2690.395104 
-    ## iter  10 value 1297.945239
-    ## iter  20 value 1283.197559
-    ## iter  30 value 1278.002504
-    ## iter  40 value 1266.133259
-    ## iter  50 value 1253.739460
-    ## iter  60 value 1211.791104
-    ## iter  70 value 1204.273590
-    ## iter  80 value 1183.149619
-    ## iter  90 value 1168.165708
-    ## iter 100 value 1156.736921
-    ## final  value 1156.736921 
+    ## initial  value 4225.474113 
+    ## iter  10 value 1326.402673
+    ## iter  20 value 1302.535198
+    ## iter  30 value 1253.907437
+    ## iter  40 value 1241.860488
+    ## iter  50 value 1239.650451
+    ## iter  60 value 1233.865677
+    ## iter  70 value 1228.312175
+    ## iter  80 value 1226.020644
+    ## iter  90 value 1224.485441
+    ## iter 100 value 1222.940322
+    ## final  value 1222.940322 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 6606.523719 
-    ## iter  10 value 1216.089311
-    ## iter  20 value 1198.418519
-    ## iter  30 value 1183.123762
-    ## iter  40 value 1172.286181
-    ## iter  50 value 1159.328474
-    ## iter  60 value 1144.701964
-    ## iter  70 value 1138.768673
-    ## iter  80 value 1132.348257
-    ## iter  90 value 1128.105737
-    ## iter 100 value 1123.439463
-    ## final  value 1123.439463 
+    ## initial  value 2612.166563 
+    ## iter  10 value 1219.290590
+    ## iter  20 value 1192.059734
+    ## iter  30 value 1176.801147
+    ## iter  40 value 1159.681584
+    ## iter  50 value 1142.362998
+    ## iter  60 value 1130.445265
+    ## iter  70 value 1122.870816
+    ## iter  80 value 1118.939128
+    ## iter  90 value 1115.185760
+    ## iter 100 value 1112.342932
+    ## final  value 1112.342932 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 5867.187923 
-    ## iter  10 value 1371.204588
-    ## iter  20 value 1318.001693
-    ## iter  30 value 1277.690264
-    ## iter  40 value 1275.463760
-    ## iter  50 value 1270.240224
-    ## iter  60 value 1249.379714
-    ## iter  70 value 1233.198039
-    ## iter  80 value 1211.985154
-    ## iter  90 value 1208.319808
-    ## iter 100 value 1204.183391
-    ## final  value 1204.183391 
+    ## # weights:  127
+    ## initial  value 3269.611300 
+    ## iter  10 value 1244.591893
+    ## iter  20 value 1223.201094
+    ## iter  30 value 1199.425212
+    ## iter  40 value 1170.567299
+    ## iter  50 value 1158.651907
+    ## iter  60 value 1140.948091
+    ## iter  70 value 1131.359379
+    ## iter  80 value 1122.996300
+    ## iter  90 value 1115.359072
+    ## iter 100 value 1105.235007
+    ## final  value 1105.235007 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 7963.542260 
-    ## iter  10 value 1312.570019
-    ## iter  20 value 1249.238328
-    ## iter  30 value 1210.356404
-    ## iter  40 value 1189.728959
-    ## iter  50 value 1176.150072
-    ## iter  60 value 1165.283792
-    ## iter  70 value 1156.498986
-    ## iter  80 value 1151.411904
-    ## iter  90 value 1150.342393
-    ## iter 100 value 1146.585679
-    ## final  value 1146.585679 
+    ## initial  value 5281.395117 
+    ## iter  10 value 1274.420994
+    ## iter  20 value 1234.900051
+    ## iter  30 value 1192.790263
+    ## iter  40 value 1168.748993
+    ## iter  50 value 1163.806542
+    ## iter  60 value 1158.547558
+    ## iter  70 value 1154.277878
+    ## iter  80 value 1153.413773
+    ## iter  90 value 1151.253674
+    ## iter 100 value 1145.923253
+    ## final  value 1145.923253 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 7942.563987 
-    ## iter  10 value 1411.340354
-    ## iter  20 value 1305.300056
-    ## iter  30 value 1281.832332
-    ## iter  40 value 1274.519521
-    ## iter  50 value 1266.691923
-    ## iter  60 value 1245.777423
-    ## iter  70 value 1223.938766
-    ## iter  80 value 1214.774428
-    ## iter  90 value 1210.378494
-    ## iter 100 value 1209.865060
-    ## final  value 1209.865060 
+    ## initial  value 9066.611991 
+    ## iter  10 value 1217.807851
+    ## iter  20 value 1201.607749
+    ## iter  30 value 1171.939420
+    ## iter  40 value 1161.608321
+    ## iter  50 value 1152.197862
+    ## iter  60 value 1140.795079
+    ## iter  70 value 1135.646396
+    ## iter  80 value 1133.848007
+    ## iter  90 value 1131.040509
+    ## iter 100 value 1125.366829
+    ## final  value 1125.366829 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 2381.696551 
-    ## iter  10 value 1318.505375
-    ## iter  20 value 1303.366476
-    ## iter  30 value 1287.812275
-    ## iter  40 value 1282.078704
-    ## iter  50 value 1279.618618
-    ## iter  60 value 1275.771140
-    ## iter  70 value 1239.522913
-    ## iter  80 value 1228.852791
-    ## iter  90 value 1208.845654
-    ## iter 100 value 1199.753581
-    ## final  value 1199.753581 
+    ## # weights:  127
+    ## initial  value 2286.991580 
+    ## iter  10 value 1229.151171
+    ## iter  20 value 1196.782440
+    ## iter  30 value 1185.521689
+    ## iter  40 value 1159.150960
+    ## iter  50 value 1148.917916
+    ## iter  60 value 1144.373129
+    ## iter  70 value 1138.551739
+    ## iter  80 value 1134.684864
+    ## iter  90 value 1130.069973
+    ## iter 100 value 1127.120468
+    ## final  value 1127.120468 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 4313.013924 
-    ## iter  10 value 1274.767477
-    ## iter  20 value 1235.828282
-    ## iter  30 value 1229.892034
-    ## iter  40 value 1224.529358
-    ## iter  50 value 1218.940997
-    ## iter  60 value 1207.313333
-    ## iter  70 value 1180.944667
-    ## iter  80 value 1170.513429
-    ## iter  90 value 1167.696110
-    ## iter 100 value 1165.832538
-    ## final  value 1165.832538 
+    ## initial  value 5180.141048 
+    ## iter  10 value 1227.256746
+    ## iter  20 value 1209.453912
+    ## iter  30 value 1192.485444
+    ## iter  40 value 1177.020072
+    ## iter  50 value 1166.765059
+    ## iter  60 value 1153.770471
+    ## iter  70 value 1149.777964
+    ## iter  80 value 1148.690198
+    ## iter  90 value 1145.329385
+    ## iter 100 value 1143.035546
+    ## final  value 1143.035546 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 4050.858756 
-    ## iter  10 value 1215.641858
-    ## iter  20 value 1186.464616
-    ## iter  30 value 1174.279311
-    ## iter  40 value 1160.821819
-    ## iter  50 value 1149.996572
-    ## iter  60 value 1139.312338
-    ## iter  70 value 1130.509024
-    ## iter  80 value 1128.143153
-    ## iter  90 value 1123.402374
-    ## iter 100 value 1117.442402
-    ## final  value 1117.442402 
+    ## initial  value 1767.159929 
+    ## iter  10 value 1246.298271
+    ## iter  20 value 1218.413262
+    ## iter  30 value 1195.974085
+    ## iter  40 value 1172.753807
+    ## iter  50 value 1161.171361
+    ## iter  60 value 1156.100757
+    ## iter  70 value 1149.968480
+    ## iter  80 value 1142.061523
+    ## iter  90 value 1134.934918
+    ## iter 100 value 1127.823216
+    ## final  value 1127.823216 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 4846.950421 
-    ## iter  10 value 1348.440059
-    ## iter  20 value 1340.919972
-    ## iter  30 value 1254.685120
-    ## iter  40 value 1218.434822
-    ## iter  50 value 1198.690148
-    ## iter  60 value 1188.956642
-    ## iter  70 value 1173.079572
-    ## iter  80 value 1167.971899
-    ## iter  90 value 1164.252456
-    ## iter 100 value 1159.415477
-    ## final  value 1159.415477 
+    ## # weights:  127
+    ## initial  value 7668.733923 
+    ## iter  10 value 1207.450486
+    ## iter  20 value 1184.950296
+    ## iter  30 value 1168.511575
+    ## iter  40 value 1156.636271
+    ## iter  50 value 1146.724584
+    ## iter  60 value 1136.483317
+    ## iter  70 value 1127.946983
+    ## iter  80 value 1117.883510
+    ## iter  90 value 1108.046995
+    ## iter 100 value 1100.255329
+    ## final  value 1100.255329 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 5588.907115 
-    ## iter  10 value 1366.385655
-    ## iter  20 value 1311.854815
-    ## iter  30 value 1287.162922
-    ## iter  40 value 1253.500802
-    ## iter  50 value 1234.683001
-    ## iter  60 value 1209.296155
-    ## iter  70 value 1195.923916
-    ## iter  80 value 1167.088137
-    ## iter  90 value 1154.938664
-    ## iter 100 value 1150.345025
-    ## final  value 1150.345025 
+    ## initial  value 3624.587127 
+    ## iter  10 value 1303.070136
+    ## iter  20 value 1254.183892
+    ## iter  30 value 1229.855844
+    ## iter  40 value 1223.153956
+    ## iter  50 value 1216.965287
+    ## iter  60 value 1212.663817
+    ## iter  70 value 1210.088065
+    ## iter  80 value 1207.503460
+    ## iter  90 value 1194.559789
+    ## iter 100 value 1187.447906
+    ## final  value 1187.447906 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 9045.953027 
-    ## iter  10 value 1238.005602
-    ## iter  20 value 1213.738456
-    ## iter  30 value 1188.285085
-    ## iter  40 value 1166.332528
-    ## iter  50 value 1152.021493
-    ## iter  60 value 1142.642429
-    ## iter  70 value 1137.332836
-    ## iter  80 value 1125.912504
-    ## iter  90 value 1120.729752
-    ## iter 100 value 1117.190389
-    ## final  value 1117.190389 
+    ## initial  value 5518.108404 
+    ## iter  10 value 1231.798324
+    ## iter  20 value 1200.154108
+    ## iter  30 value 1179.992148
+    ## iter  40 value 1161.765414
+    ## iter  50 value 1151.739916
+    ## iter  60 value 1139.499996
+    ## iter  70 value 1131.831641
+    ## iter  80 value 1123.390442
+    ## iter  90 value 1117.908586
+    ## iter 100 value 1111.858414
+    ## final  value 1111.858414 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 5909.664455 
-    ## iter  10 value 1434.446268
-    ## iter  20 value 1344.697181
-    ## iter  30 value 1342.532470
-    ## iter  40 value 1341.777601
-    ## iter  50 value 1341.547939
-    ## iter  60 value 1341.252326
-    ## iter  70 value 1341.233337
-    ## iter  80 value 1341.117374
-    ## iter  90 value 1341.071631
-    ## iter 100 value 1340.951730
-    ## final  value 1340.951730 
+    ## # weights:  127
+    ## initial  value 9089.717058 
+    ## iter  10 value 1227.696724
+    ## iter  20 value 1184.710441
+    ## iter  30 value 1162.371057
+    ## iter  40 value 1145.560680
+    ## iter  50 value 1125.469947
+    ## iter  60 value 1115.349968
+    ## iter  70 value 1110.372187
+    ## iter  80 value 1105.072686
+    ## iter  90 value 1097.655515
+    ## iter 100 value 1087.574252
+    ## final  value 1087.574252 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 3776.998000 
-    ## iter  10 value 1235.061323
-    ## iter  20 value 1214.756798
-    ## iter  30 value 1192.727385
-    ## iter  40 value 1178.271966
-    ## iter  50 value 1173.229708
-    ## iter  60 value 1171.209619
-    ## iter  70 value 1162.479989
-    ## iter  80 value 1155.696509
-    ## iter  90 value 1154.299268
-    ## iter 100 value 1151.075743
-    ## final  value 1151.075743 
+    ## initial  value 5024.002032 
+    ## iter  10 value 1366.041461
+    ## iter  20 value 1341.591613
+    ## iter  30 value 1333.294799
+    ## iter  40 value 1291.751235
+    ## iter  50 value 1280.612091
+    ## iter  60 value 1245.018500
+    ## iter  70 value 1219.994988
+    ## iter  80 value 1197.352099
+    ## iter  90 value 1189.675032
+    ## iter 100 value 1183.724939
+    ## final  value 1183.724939 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 5132.134091 
-    ## iter  10 value 1211.145229
-    ## iter  20 value 1184.276729
-    ## iter  30 value 1166.388716
-    ## iter  40 value 1155.163138
-    ## iter  50 value 1135.486813
-    ## iter  60 value 1121.681313
-    ## iter  70 value 1112.980753
-    ## iter  80 value 1104.403687
-    ## iter  90 value 1095.962832
-    ## iter 100 value 1091.732021
-    ## final  value 1091.732021 
+    ## initial  value 3454.403489 
+    ## iter  10 value 1333.676881
+    ## iter  20 value 1248.713527
+    ## iter  30 value 1218.589070
+    ## iter  40 value 1196.904945
+    ## iter  50 value 1184.305620
+    ## iter  60 value 1170.746661
+    ## iter  70 value 1164.446016
+    ## iter  80 value 1148.039949
+    ## iter  90 value 1137.129262
+    ## iter 100 value 1132.465811
+    ## final  value 1132.465811 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 6764.083517 
-    ## iter  10 value 1347.633952
-    ## iter  20 value 1346.181019
-    ## iter  30 value 1346.084977
-    ## iter  40 value 1346.016498
-    ## iter  50 value 1345.834086
-    ## iter  60 value 1345.715627
-    ## iter  70 value 1345.687314
-    ## iter  80 value 1345.199819
-    ## iter  90 value 1345.009093
-    ## iter 100 value 1344.380129
-    ## final  value 1344.380129 
+    ## # weights:  127
+    ## initial  value 3618.645230 
+    ## iter  10 value 1238.606128
+    ## iter  20 value 1199.046807
+    ## iter  30 value 1177.867827
+    ## iter  40 value 1163.068916
+    ## iter  50 value 1158.112211
+    ## iter  60 value 1150.793762
+    ## iter  70 value 1139.613879
+    ## iter  80 value 1129.558751
+    ## iter  90 value 1120.720649
+    ## iter 100 value 1115.470614
+    ## final  value 1115.470614 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 9904.109278 
-    ## iter  10 value 1221.925818
-    ## iter  20 value 1191.999096
-    ## iter  30 value 1180.697493
-    ## iter  40 value 1171.008699
-    ## iter  50 value 1165.613467
-    ## iter  60 value 1146.558550
-    ## iter  70 value 1132.651480
-    ## iter  80 value 1122.658627
-    ## iter  90 value 1115.977507
-    ## iter 100 value 1115.025999
-    ## final  value 1115.025999 
+    ## initial  value 2473.643090 
+    ## iter  10 value 1254.051814
+    ## iter  20 value 1238.268698
+    ## iter  30 value 1216.207400
+    ## iter  40 value 1197.833552
+    ## iter  50 value 1187.012360
+    ## iter  60 value 1181.345541
+    ## iter  70 value 1175.093078
+    ## iter  80 value 1162.503204
+    ## iter  90 value 1147.761489
+    ## iter 100 value 1142.094636
+    ## final  value 1142.094636 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 4848.119856 
-    ## iter  10 value 1220.806834
-    ## iter  20 value 1193.432989
-    ## iter  30 value 1177.322419
-    ## iter  40 value 1160.981810
-    ## iter  50 value 1149.493394
-    ## iter  60 value 1134.272160
-    ## iter  70 value 1115.073779
-    ## iter  80 value 1103.631820
-    ## iter  90 value 1091.454058
-    ## iter 100 value 1083.918172
-    ## final  value 1083.918172 
+    ## initial  value 3568.878313 
+    ## iter  10 value 1297.559117
+    ## iter  20 value 1261.603634
+    ## iter  30 value 1229.414737
+    ## iter  40 value 1220.575882
+    ## iter  50 value 1201.956615
+    ## iter  60 value 1196.647458
+    ## iter  70 value 1192.748901
+    ## iter  80 value 1184.668428
+    ## iter  90 value 1172.858485
+    ## iter 100 value 1157.496364
+    ## final  value 1157.496364 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 5668.499229 
-    ## iter  10 value 1396.871453
-    ## iter  20 value 1349.945447
-    ## iter  30 value 1278.485780
-    ## iter  40 value 1247.003930
-    ## iter  50 value 1203.193310
-    ## iter  60 value 1188.592898
-    ## iter  70 value 1175.061150
-    ## iter  80 value 1161.413437
-    ## iter  90 value 1156.182563
-    ## iter 100 value 1155.085254
-    ## final  value 1155.085254 
+    ## # weights:  127
+    ## initial  value 2647.091069 
+    ## iter  10 value 1199.260290
+    ## iter  20 value 1183.985954
+    ## iter  30 value 1168.970779
+    ## iter  40 value 1149.235078
+    ## iter  50 value 1139.725039
+    ## iter  60 value 1132.902335
+    ## iter  70 value 1121.881860
+    ## iter  80 value 1113.599857
+    ## iter  90 value 1106.796091
+    ## iter 100 value 1100.424566
+    ## final  value 1100.424566 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 2968.835023 
-    ## iter  10 value 1233.364270
-    ## iter  20 value 1203.639466
-    ## iter  30 value 1186.437939
-    ## iter  40 value 1176.315472
-    ## iter  50 value 1169.472690
-    ## iter  60 value 1159.657765
-    ## iter  70 value 1153.631555
-    ## iter  80 value 1146.603237
-    ## iter  90 value 1144.996226
-    ## iter 100 value 1142.982820
-    ## final  value 1142.982820 
+    ## initial  value 7917.378991 
+    ## iter  10 value 1390.821933
+    ## iter  20 value 1340.202544
+    ## iter  30 value 1337.996704
+    ## iter  40 value 1337.632799
+    ## iter  50 value 1336.795332
+    ## iter  60 value 1336.687779
+    ## iter  70 value 1336.165741
+    ## iter  80 value 1336.136654
+    ## iter  90 value 1336.122897
+    ## iter 100 value 1336.102295
+    ## final  value 1336.102295 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 8204.123180 
-    ## iter  10 value 1252.124994
-    ## iter  20 value 1202.838279
-    ## iter  30 value 1172.551048
-    ## iter  40 value 1157.294478
-    ## iter  50 value 1150.511483
-    ## iter  60 value 1137.674494
-    ## iter  70 value 1131.786374
-    ## iter  80 value 1127.918340
-    ## iter  90 value 1123.302701
-    ## iter 100 value 1119.616266
-    ## final  value 1119.616266 
+    ## initial  value 3339.643173 
+    ## iter  10 value 1195.883366
+    ## iter  20 value 1177.498011
+    ## iter  30 value 1172.654356
+    ## iter  40 value 1166.993007
+    ## iter  50 value 1155.041510
+    ## iter  60 value 1149.558728
+    ## iter  70 value 1145.005454
+    ## iter  80 value 1140.723105
+    ## iter  90 value 1138.060755
+    ## iter 100 value 1131.965902
+    ## final  value 1131.965902 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 2755.394486 
-    ## iter  10 value 1341.292895
-    ## iter  20 value 1279.627461
-    ## iter  30 value 1271.696478
-    ## iter  40 value 1264.105685
-    ## iter  50 value 1263.496131
-    ## iter  60 value 1262.294026
-    ## iter  70 value 1262.033655
-    ## iter  80 value 1261.857752
-    ## iter  90 value 1261.714897
-    ## iter 100 value 1261.623822
-    ## final  value 1261.623822 
+    ## # weights:  127
+    ## initial  value 4376.601611 
+    ## iter  10 value 1201.173670
+    ## iter  20 value 1188.489412
+    ## iter  30 value 1172.213509
+    ## iter  40 value 1163.262200
+    ## iter  50 value 1147.927285
+    ## iter  60 value 1137.598423
+    ## iter  70 value 1132.128366
+    ## iter  80 value 1125.375233
+    ## iter  90 value 1117.301219
+    ## iter 100 value 1110.368516
+    ## final  value 1110.368516 
     ## stopped after 100 iterations
     ## # weights:  55
-    ## initial  value 4801.531042 
-    ## iter  10 value 1298.807025
-    ## iter  20 value 1242.802253
-    ## iter  30 value 1219.527195
-    ## iter  40 value 1214.280987
-    ## iter  50 value 1207.593705
-    ## iter  60 value 1201.242100
-    ## iter  70 value 1198.154170
-    ## iter  80 value 1197.163401
-    ## iter  90 value 1196.012075
-    ## iter 100 value 1189.851586
-    ## final  value 1189.851586 
+    ## initial  value 3677.009448 
+    ## iter  10 value 1340.327964
+    ## iter  20 value 1332.825642
+    ## iter  30 value 1326.939118
+    ## iter  40 value 1322.795577
+    ## iter  50 value 1305.209191
+    ## iter  60 value 1258.705987
+    ## iter  70 value 1229.046382
+    ## iter  80 value 1201.564847
+    ## iter  90 value 1181.172091
+    ## iter 100 value 1165.363597
+    ## final  value 1165.363597 
     ## stopped after 100 iterations
     ## # weights:  91
-    ## initial  value 3488.633111 
-    ## iter  10 value 1249.599485
-    ## iter  20 value 1215.326120
-    ## iter  30 value 1193.644988
-    ## iter  40 value 1168.059331
-    ## iter  50 value 1148.821981
-    ## iter  60 value 1142.708635
-    ## iter  70 value 1131.360799
-    ## iter  80 value 1125.118256
-    ## iter  90 value 1121.811137
-    ## iter 100 value 1121.079676
-    ## final  value 1121.079676 
+    ## initial  value 4488.198847 
+    ## iter  10 value 1211.121066
+    ## iter  20 value 1192.677437
+    ## iter  30 value 1170.039077
+    ## iter  40 value 1157.681082
+    ## iter  50 value 1141.662302
+    ## iter  60 value 1135.821839
+    ## iter  70 value 1131.319355
+    ## iter  80 value 1123.209888
+    ## iter  90 value 1112.182486
+    ## iter 100 value 1109.859615
+    ## final  value 1109.859615 
     ## stopped after 100 iterations
-    ## # weights:  19
-    ## initial  value 3500.413969 
-    ## iter  10 value 1697.550637
-    ## iter  20 value 1575.598467
-    ## iter  30 value 1523.551917
-    ## iter  40 value 1478.703218
-    ## iter  50 value 1456.747421
-    ## iter  60 value 1452.690590
-    ## iter  70 value 1441.219852
-    ## iter  80 value 1439.847833
-    ## final  value 1439.843423 
-    ## converged
+    ## # weights:  127
+    ## initial  value 6719.132178 
+    ## iter  10 value 1266.944663
+    ## iter  20 value 1224.062228
+    ## iter  30 value 1190.656645
+    ## iter  40 value 1174.934778
+    ## iter  50 value 1161.260232
+    ## iter  60 value 1145.442694
+    ## iter  70 value 1134.822893
+    ## iter  80 value 1123.660219
+    ## iter  90 value 1115.910286
+    ## iter 100 value 1109.959358
+    ## final  value 1109.959358 
+    ## stopped after 100 iterations
+    ## # weights:  55
+    ## initial  value 7376.922931 
+    ## iter  10 value 1505.788087
+    ## iter  20 value 1437.063495
+    ## iter  30 value 1396.197907
+    ## iter  40 value 1315.550641
+    ## iter  50 value 1257.900710
+    ## iter  60 value 1217.977101
+    ## iter  70 value 1183.621914
+    ## iter  80 value 1172.170527
+    ## iter  90 value 1166.971829
+    ## iter 100 value 1164.914880
+    ## final  value 1164.914880 
+    ## stopped after 100 iterations
+    ## # weights:  91
+    ## initial  value 3897.846156 
+    ## iter  10 value 1267.325846
+    ## iter  20 value 1228.996160
+    ## iter  30 value 1211.028286
+    ## iter  40 value 1193.581847
+    ## iter  50 value 1180.510739
+    ## iter  60 value 1173.257247
+    ## iter  70 value 1164.571438
+    ## iter  80 value 1144.161614
+    ## iter  90 value 1129.719238
+    ## iter 100 value 1122.248735
+    ## final  value 1122.248735 
+    ## stopped after 100 iterations
+    ## # weights:  127
+    ## initial  value 3195.062208 
+    ## iter  10 value 1262.388398
+    ## iter  20 value 1217.511717
+    ## iter  30 value 1190.666531
+    ## iter  40 value 1171.447048
+    ## iter  50 value 1153.647397
+    ## iter  60 value 1145.831276
+    ## iter  70 value 1130.198627
+    ## iter  80 value 1120.669260
+    ## iter  90 value 1114.764124
+    ## iter 100 value 1109.440621
+    ## final  value 1109.440621 
+    ## stopped after 100 iterations
+    ## # weights:  55
+    ## initial  value 6800.353876 
+    ## iter  10 value 1609.406186
+    ## iter  20 value 1540.134336
+    ## iter  30 value 1516.189500
+    ## iter  40 value 1494.399561
+    ## iter  50 value 1474.215048
+    ## iter  60 value 1465.942510
+    ## iter  70 value 1455.202757
+    ## iter  80 value 1444.567351
+    ## iter  90 value 1430.963203
+    ## iter 100 value 1429.300126
+    ## final  value 1429.300126 
+    ## stopped after 100 iterations
     ## maximum number of iterations reached 0.001980779 0.001977435maximum number of iterations reached 0.0007634843 0.0007623507maximum number of iterations reached 0.002072661 0.002070566maximum number of iterations reached 0.001081654 0.001080679maximum number of iterations reached 0.00188494 0.00188181maximum number of iterations reached 0.003218939 0.003195977
 
 ``` r
@@ -2357,9 +2398,11 @@ lapply(model_list, print)
     ## Resampling results across tuning parameters:
     ## 
     ##   mtry  ROC        Sens       Spec      
-    ##    2    0.7735807  0.9987083  0.03720930
-    ##    9    0.7673369  0.9972873  0.05116279
-    ##   16    0.7655722  0.9967707  0.05581395
+    ##    2    0.7734869  0.9987083  0.03488372
+    ##    5    0.7719598  0.9979332  0.04883721
+    ##    9    0.7707925  0.9972873  0.05116279
+    ##   12    0.7698870  0.9967706  0.05348837
+    ##   16    0.7659857  0.9961246  0.05348837
     ## 
     ## ROC was used to select the optimal model using the largest value.
     ## The final value used for the model was mtry = 2.
@@ -2374,19 +2417,19 @@ lapply(model_list, print)
     ## Summary of sample sizes: 6537, 6537, 6536, 6537, 6537 
     ## Resampling results across tuning parameters:
     ## 
-    ##   size  decay  ROC        Sens       Spec       
-    ##   1     0e+00  0.7149971  1.0000000  0.000000000
-    ##   1     1e-04  0.6314120  1.0000000  0.000000000
-    ##   1     1e-01  0.7805181  1.0000000  0.000000000
-    ##   3     0e+00  0.7503130  0.9987087  0.009302326
-    ##   3     1e-04  0.6952405  1.0000000  0.000000000
-    ##   3     1e-01  0.7734919  0.9990956  0.011627907
-    ##   5     0e+00  0.7469888  0.9987080  0.006976744
-    ##   5     1e-04  0.7386560  0.9979328  0.020930233
-    ##   5     1e-01  0.7660110  0.9985794  0.011627907
+    ##   size  decay  ROC        Sens       Spec      
+    ##   3     0.00   0.6675650  1.0000000  0.00000000
+    ##   3     0.01   0.7589983  1.0000000  0.00000000
+    ##   3     0.10   0.7785379  0.9993540  0.00000000
+    ##   5     0.00   0.7553004  0.9981912  0.01162791
+    ##   5     0.01   0.7586091  0.9976750  0.01627907
+    ##   5     0.10   0.7624962  0.9971581  0.02093023
+    ##   7     0.00   0.7650264  0.9962533  0.02558140
+    ##   7     0.01   0.7410020  0.9965116  0.03720930
+    ##   7     0.10   0.7609971  0.9979331  0.01162791
     ## 
     ## ROC was used to select the optimal model using the largest value.
-    ## The final values used for the model were size = 1 and decay = 0.1.
+    ## The final values used for the model were size = 3 and decay = 0.1.
     ## Support Vector Machines with Linear Kernel 
     ## 
     ## 8171 samples
@@ -2405,21 +2448,23 @@ lapply(model_list, print)
 
     ## $rf
     ##  mtry ROC         Sens        Spec        
-    ##  " 2" "0.7735807" "0.9987083" "0.03720930"
-    ##  " 9" "0.7673369" "0.9972873" "0.05116279"
-    ##  "16" "0.7655722" "0.9967707" "0.05581395"
+    ##  " 2" "0.7734869" "0.9987083" "0.03488372"
+    ##  " 5" "0.7719598" "0.9979332" "0.04883721"
+    ##  " 9" "0.7707925" "0.9972873" "0.05116279"
+    ##  "12" "0.7698870" "0.9967706" "0.05348837"
+    ##  "16" "0.7659857" "0.9961246" "0.05348837"
     ## 
     ## $nnet
-    ##  size decay   ROC         Sens        Spec         
-    ##  "1"  "0e+00" "0.7149971" "1.0000000" "0.000000000"
-    ##  "1"  "1e-04" "0.6314120" "1.0000000" "0.000000000"
-    ##  "1"  "1e-01" "0.7805181" "1.0000000" "0.000000000"
-    ##  "3"  "0e+00" "0.7503130" "0.9987087" "0.009302326"
-    ##  "3"  "1e-04" "0.6952405" "1.0000000" "0.000000000"
-    ##  "3"  "1e-01" "0.7734919" "0.9990956" "0.011627907"
-    ##  "5"  "0e+00" "0.7469888" "0.9987080" "0.006976744"
-    ##  "5"  "1e-04" "0.7386560" "0.9979328" "0.020930233"
-    ##  "5"  "1e-01" "0.7660110" "0.9985794" "0.011627907"
+    ##  size decay  ROC         Sens        Spec        
+    ##  "3"  "0.00" "0.6675650" "1.0000000" "0.00000000"
+    ##  "3"  "0.01" "0.7589983" "1.0000000" "0.00000000"
+    ##  "3"  "0.10" "0.7785379" "0.9993540" "0.00000000"
+    ##  "5"  "0.00" "0.7553004" "0.9981912" "0.01162791"
+    ##  "5"  "0.01" "0.7586091" "0.9976750" "0.01627907"
+    ##  "5"  "0.10" "0.7624962" "0.9971581" "0.02093023"
+    ##  "7"  "0.00" "0.7650264" "0.9962533" "0.02558140"
+    ##  "7"  "0.01" "0.7410020" "0.9965116" "0.03720930"
+    ##  "7"  "0.10" "0.7609971" "0.9979331" "0.01162791"
     ## 
     ## $svmLinear
     ##  ROC         Sens Spec
@@ -2442,22 +2487,143 @@ summary(results)
     ## 
     ## ROC 
     ##                Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
-    ## rf        0.7178242 0.7783149 0.7789120 0.7735807 0.7936422 0.7992103    0
-    ## nnet      0.7438969 0.7591040 0.7924554 0.7805181 0.8016162 0.8055180    0
+    ## rf        0.7128328 0.7767562 0.7796895 0.7734869 0.7936422 0.8045138    0
+    ## nnet      0.7362012 0.7642908 0.7812631 0.7785379 0.8027572 0.8081771    0
     ## svmLinear 0.4457364 0.5909651 0.7137763 0.6520486 0.7500150 0.7597500    0
     ## 
     ## Sens 
-    ##               Min.   1st Qu.   Median      Mean  3rd Qu.     Max. NA's
-    ## rf        0.998062 0.9980633 0.998708 0.9987083 0.999354 0.999354    0
-    ## nnet      1.000000 1.0000000 1.000000 1.0000000 1.000000 1.000000    0
-    ## svmLinear 1.000000 1.0000000 1.000000 1.0000000 1.000000 1.000000    0
+    ##                Min.  1st Qu.   Median      Mean  3rd Qu.     Max. NA's
+    ## rf        0.9974177 0.998062 0.999354 0.9987083 0.999354 0.999354    0
+    ## nnet      0.9967700 1.000000 1.000000 0.9993540 1.000000 1.000000    0
+    ## svmLinear 1.0000000 1.000000 1.000000 1.0000000 1.000000 1.000000    0
     ## 
     ## Spec 
-    ##                 Min.    1st Qu.     Median      Mean    3rd Qu.       Max. NA's
-    ## rf        0.02325581 0.03488372 0.03488372 0.0372093 0.04651163 0.04651163    0
-    ## nnet      0.00000000 0.00000000 0.00000000 0.0000000 0.00000000 0.00000000    0
-    ## svmLinear 0.00000000 0.00000000 0.00000000 0.0000000 0.00000000 0.00000000    0
+    ##                 Min.    1st Qu.     Median       Mean    3rd Qu.       Max.
+    ## rf        0.02325581 0.02325581 0.03488372 0.03488372 0.04651163 0.04651163
+    ## nnet      0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000
+    ## svmLinear 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000
+    ##           NA's
+    ## rf           0
+    ## nnet         0
+    ## svmLinear    0
 
 ``` r
 # nnet and RF models improve AUROC, but they are more complex models.
 ```
+
+``` r
+#To address the overfitting issue, we can try to simplify the models by reducing the number of predictors used in the model. One way to do this is by using feature selection techniques such as Recursive Feature Elimination (RFE) or LASSO regression.
+
+# Define the control for the train function
+ctrl <- trainControl(method = "cv", number = 5, classProbs = TRUE, summaryFunction = twoClassSummary)
+
+# Define the model formula
+model_formula <- as.formula(paste(outcome, "~ ."))
+
+# Define a list of models to fit
+models <- c("glmnet", "gbm")
+
+# Define the tuning grid for glmnet (Elastic Net)
+# Alpha = 1 is Lasso, Alpha = 0 is Ridge, and anything in between is a combination (Elastic Net)
+# Lambda is the parameter for the amount of shrinkage. caret will choose the optimal value from the grid.
+tuneGrid_glmnet <- expand.grid(alpha = seq(0, 1, by = 0.1), lambda = seq(0.001, 1, length = 10))
+
+# Define the tuning grid for gbm (Gradient Boosting)
+# The number of trees (n.trees), interaction depth (interaction.depth), shrinkage (shrinkage) and minimum number of observations in the nodes (n.minobsinnode) are common parameters to tune.
+tuneGrid_gbm <- expand.grid(n.trees = c(100, 200, 300), interaction.depth = c(1, 3, 5), shrinkage = c(0.01, 0.1), n.minobsinnode = 10)
+
+# Initialize a list to store the models
+model_list <- list()
+
+# Fit all models using 5-fold CV and hyperparameter tuning
+for (model in models) {
+  set.seed(123) # for reproducibility
+  
+  if (model == "glmnet") {
+    model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, tuneGrid = tuneGrid_glmnet)
+  } else if (model == "gbm") {
+    model_list[[model]] <- train(model_formula, data = data_subset, method = model, trControl = ctrl, tuneGrid = tuneGrid_gbm, verbose = FALSE)
+  }
+}
+
+# Compare the performance of the models
+results <- resamples(model_list)
+
+# Print the summary of the results
+summary(results)
+```
+
+    ## 
+    ## Call:
+    ## summary.resamples(object = results)
+    ## 
+    ## Models: glmnet, gbm 
+    ## Number of resamples: 5 
+    ## 
+    ## ROC 
+    ##             Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+    ## glmnet 0.7599378 0.7924404 0.7929511 0.7877010 0.7939577 0.7992178    0
+    ## gbm    0.7673367 0.7931164 0.8070729 0.7983171 0.8076813 0.8163782    0
+    ## 
+    ## Sens 
+    ##             Min.  1st Qu.    Median      Mean  3rd Qu.     Max. NA's
+    ## glmnet 0.9993540 0.999354 0.9993544 0.9996125 1.000000 1.000000    0
+    ## gbm    0.9961265 0.997416 0.9980620 0.9978041 0.998708 0.998708    0
+    ## 
+    ## Spec 
+    ##              Min.    1st Qu.     Median        Mean    3rd Qu.       Max. NA's
+    ## glmnet 0.00000000 0.00000000 0.00000000 0.002325581 0.00000000 0.01162791    0
+    ## gbm    0.02325581 0.02325581 0.05813953 0.055813953 0.06976744 0.10465116    0
+
+## Conclusion from final models
+
+I engaged in a journey to iteratively refine my model selection and
+tuning. Initially, I chose three different machine learning models,
+namely, Random Forest (rf), Neural Network (nnet), and Support Vector
+Machine with Linear Kernel (svmLinear), for their widespread use and
+robustness in a variety of situations.
+
+Initial Approach and Results:
+
+I started with k-fold cross-validation (k=5), which is a technique used
+to assess the performance of machine learning models and reduce
+overfitting. By randomly dividing the dataset into k groups or folds of
+approximately equal size, I was able to use one fold as a testing set
+while the others were used as a training set. The final model’s error is
+the average of the errors obtained in each of the k-folds, making the
+results more reliable.
+
+Despite this, the initial models (rf, nnet, and svmLinear) seemed to be
+overfitting, as evidenced by high sensitivity (almost perfect in
+identifying positive cases) and extremely low specificity (struggled to
+correctly identify negative cases). This issue was consistent across all
+models, indicating that a different approach was needed.
+
+Model Selection and Tuning - GBM Implementation:
+
+To counter the overfitting and performance issues, I decided to
+implement the Gradient Boosting Machine (GBM) model, a powerful ensemble
+method known for its effectiveness in creating strong predictive models.
+
+Ensemble methods work by creating multiple models and then combining
+them to produce improved results, which often results in higher
+performance than any single model. They’re especially effective against
+overfitting because they help improve the generalizability of the model.
+
+Results with GBM:
+
+The GBM model performed slightly better than the previous models, both
+in terms of ROC (Receiver Operating Characteristic, a performance
+measurement for classification problems) and specificity, while
+maintaining high sensitivity.
+
+The mean ROC score, which tells us how capable the model is at
+distinguishing between classes, improved to 0.7983. The mean sensitivity
+(True Positive Rate or Recall), indicating the model’s performance at
+identifying positive cases, remained high at 0.9978. However, the mean
+specificity also increased to \~0.0558, indicating a slight improvement
+in identifying negative cases.
+
+While there is still room for improvement, especially in terms of
+specificity, the GBM model showcased a step in the right direction
+compared to the initial models.
