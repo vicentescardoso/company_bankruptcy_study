@@ -2512,7 +2512,7 @@ summary(results)
 ```
 
 ``` r
-#To address the overfitting issue, we can try to simplify the models by reducing the number of predictors used in the model. One way to do this is by using feature selection techniques such as Recursive Feature Elimination (RFE) or LASSO regression.
+# Based on these results, it seems like  models are struggling with identifying the negative cases correctly (low Specificity), and they might be overfitting the positive class. This is often a symptom of imbalanced classes in the dataset. So will try Gradient Boosting now.
 
 # Define the control for the train function
 ctrl <- trainControl(method = "cv", number = 5, classProbs = TRUE, summaryFunction = twoClassSummary)
@@ -2575,7 +2575,7 @@ summary(results)
     ## glmnet 0.00000000 0.00000000 0.00000000 0.002325581 0.00000000 0.01162791    0
     ## gbm    0.02325581 0.02325581 0.05813953 0.055813953 0.06976744 0.10465116    0
 
-## Conclusion from final models
+## Conclusion from last models
 
 I engaged in a journey to iteratively refine my model selection and
 tuning. Initially, I chose three different machine learning models,
